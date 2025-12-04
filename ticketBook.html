@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cricket Ticket Booking</title>
+  <script>
+    async function bookTickets(event) {
+      event.preventDefault();
+      const name = document.getElementById("name").value;
+      const match = document.getElementById("match").value;
+      const tickets = document.getElementById("tickets").value;
+
+      const result = document.getElementById("result");
+
+      if (!name || !match || !tickets || tickets <= 0) {
+        result.textContent = "❌ Please fill in all fields correctly.";
+        result.className = "text-red-600 mt-4 font-semibold";
+        return;
+      }
+
+      let matchInfo = "";
+      switch (parseInt(match)) {
+        case 1:
+          matchInfo = "India vs Australia at Wankhede Stadium (7:30 PM - 11:30 PM)";
+          break;
+        case 2:
+          matchInfo = "India vs England at Eden Gardens (6:00 PM - 10:00 PM)";
+          break;
+        case 3:
+          matchInfo = "India vs South Africa at M. Chinnaswamy Stadium (4:00 PM - 8:00 PM)";
+          break;
+        default:
+          matchInfo = "Invalid Match Selected";
+      }
+
+      result.innerHTML = `
+        <div class="mt-4 text-green-700 font-semibold">
+          ✅ Booking Confirmed!<br>
+          👤 Name: ${name}<br>
+          🏏 Match: ${matchInfo}<br>
+          🎫 Tickets: ${tickets}<br>
+          🎉 Enjoy the match!
+        </div>
+      `;
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+  <div class="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md">
+    <h1 class="text-2xl font-bold mb-6 text-center">🏏 Cricket Ticket Booking</h1>
+    <form onsubmit="bookTickets(event)">
+      <label class="block mb-2 font-medium">Your Name</label>
+      <input id="name" type="text" class="w-full mb-4 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" />
+
+      <label class="block mb-2 font-medium">Select Match</label>
+      <select id="match" class="w-full mb-4 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+        <option value="">-- Choose Match --</option>
+        <option value="1">1. India vs Australia</option>
+        <option value="2">2. India vs England</option>
+        <option value="3">3. India vs South Africa</option>
+      </select>
+
+      <label class="block mb-2 font-medium">Number of Tickets</label>
+      <input id="tickets" type="number" class="w-full mb-4 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" />
+
+      <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">Book Tickets</button>
+    </form>
+    <div id="result"></div>
+  </div>
+</body>
+</html>

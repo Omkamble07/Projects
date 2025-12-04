@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Car Price Predictor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Bootstrap CSS -->
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+  />
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+  />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="static/style.css" />
+</head>
+<body>
+  <main class="form-wrapper">
+    <div class="form-card">
+      <header class="form-header">
+        <h1><i class="fas fa-car"></i> Car Price Predictor</h1>
+        <p class="form-subtitle">Get an instant estimate for your car's price</p>
+      </header>
+      <div class="form-body">
+        <form id="predict-form" name="Modelform" method="post" accept-charset="utf-8">
+          <div class="form-group">
+            <label for="company">Company</label>
+            <select id="company" name="company" class="form-control" required onchange="load_car_models(this.id,'car_models')">
+              {% for company in companies %}
+              <option value="{{ company }}">{{ company }}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="car_models">Model</label>
+            <select id="car_models" name="car_models" class="form-control" required></select>
+          </div>
+
+          <div class="form-group">
+            <label for="year">Year of Purchase</label>
+            <select id="year" name="year" class="form-control" required>
+              {% for year in years %}
+              <option value="{{ year }}">{{ year }}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="fuel_type">Fuel Type</label>
+            <select id="fuel_type" name="fuel_type" class="form-control" required>
+              {% for fuel in fuel_types %}
+              <option value="{{ fuel }}">{{ fuel }}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="kilo_driven">Kilometres Driven</label>
+            <input
+              type="number"
+              id="kilo_driven"
+              name="kilo_driven"
+              class="form-control"
+              placeholder="e.g. 45000"
+              min="0"
+              required
+            />
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">
+            <i class="fas fa-magic"></i> Predict Price
+          </button>
+        </form>
+
+        <div id="prediction" class="prediction-result"></div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function load_car_models(company_id, car_model_id) {
+      var company = document.getElementById(company_id);
+      var car_model = document.getElementById(car_model_id);
+      car_model.value = "";
+      car_model.innerHTML = "";
+      {% for company in companies %}
+      if (company.value == "{{ company }}") {
+        {% for model in car_models %}
+        {% if company in model %}
+        var newOption = document.createElement("option");
+        newOption.value = "{{ model }}";
+        newOption.innerHTML = "{{ model }}";
+        car_model.options.add(newOption);
+        {% endif %}
+        {% endfor %}
+      }
+      {% endfor %}
+    }
+
+    document.getElementById("predict-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+      var fd = new FormData(this);
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "/predict", true);
+      document.getElementById("prediction").innerHTML = "<i class='fas fa-spinner fa-spin'></i> Predicting...";
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+          document.getElementById("prediction").innerHTML = "<i class='fas fa-rupee-sign'></i> " + xhr.responseText;
+        }
+      };
+      xhr.send(fd);
+    });
+  </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

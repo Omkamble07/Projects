@@ -1,0 +1,86 @@
+/* Background - vibrant and game-like */
+body {
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    background-size: 400% 400%;
+    animation: bg-animation 12s ease infinite;
+    color: #fff;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes bg-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Title Styling */
+h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+/* Game container */
+#container {
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+    display: inline-block;
+}
+
+/* Game boxes */
+.box {
+    display: inline-block;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    position: relative;
+    transition: background 0.3s, transform 0.1s;
+}
+
+.box:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+/* X and O Styling */
+span {
+    position: absolute;
+    font-size: 75px;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    height: 75px;
+    width: 75px;
+    padding: 0px;
+    margin: 5px;
+    margin-left: -35px;
+    color: #fff;
+    text-shadow: 0 0 15px #00ffcc, 0 0 25px #00ffcc;
+    transition: text-shadow 0.3s ease-in-out;
+}
+
+/* Glow animation when placed */
+span[data-player="X"] {
+    color: #ff4f81;
+    text-shadow: 0 0 15px #ff4f81, 0 0 25px #ff4f81, 0 0 35px #ff4f81;
+}
+
+span[data-player="O"] {
+    color: #00ffcc;
+    text-shadow: 0 0 15px #00ffcc, 0 0 25px #00ffcc, 0 0 35px #00ffcc;
+}
+
+/* Borders fix */
+.top { border-top: none; }
+.bottom { border-bottom: none; }
+.left { border-left: none; }
+.right { border-right: none; }

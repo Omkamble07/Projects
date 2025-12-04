@@ -1,0 +1,98 @@
+/* Global Styles */
+body {
+  background: linear-gradient(135deg, #232526, #75767B);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+
+  /* Center the container */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Form Card */
+.form-wrapper {
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+}
+
+.form-card {
+  /* Transparent glass look */
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  color: #fff;
+}
+
+.form-header {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 30px 20px;
+  text-align: center;
+  border-radius: 16px 16px 0 0;
+}
+
+.form-header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.form-header .form-subtitle {
+  font-weight: 300;
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+.form-body {
+  padding: 30px 20px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #fff;
+}
+
+.form-control {
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  color: #000;
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #232526, #75767B);
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 12px;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(90deg, #75767B, #232526);
+}
+
+.prediction-result {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: white;
+}
+
+@media (max-width: 576px) {
+  .form-wrapper {
+    padding: 10px;
+  }
+  .form-body {
+    padding: 20px 10px;
+  }
+}

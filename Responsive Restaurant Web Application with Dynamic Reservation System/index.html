@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bella Vista - Fine Dining Restaurant</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-utensils"></i>
+                    <span>Bella Vista</span>
+                </div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#menu" class="nav-link">Menu</a></li>
+                    <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                    <li><a href="#reservation" class="nav-link">Reservations</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Background Image -->
+    <section class="hero" id="home" style="background-image: url('images/hero-bg.jpg');">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Welcome to Bella Vista</h1>
+            <p class="hero-subtitle">Experience culinary excellence in an elegant atmosphere</p>
+            <div class="hero-buttons">
+                <a href="#reservation" class="btn btn-primary">Book a Table</a>
+                <a href="#menu" class="btn btn-secondary">View Menu</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Story</h2>
+                <div class="title-divider"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Fine Dining Since 1995</h3>
+                    <p>At Bella Vista, we believe that dining is an art form. Our passionate chefs craft each dish with
+                        locally-sourced ingredients, combining traditional techniques with modern innovation.</p>
+                    <p>With over 25 years of culinary excellence, we've become a destination for food enthusiasts
+                        seeking an unforgettable dining experience.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">25+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Signature Dishes</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">10k+</span>
+                            <span class="stat-label">Happy Customers</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="images/about_img.jpg" alt="Bella Vista Restaurant Interior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Menu</h2>
+                <div class="title-divider"></div>
+                <p class="section-subtitle">Explore our carefully curated selection</p>
+            </div>
+
+            <div class="menu-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="appetizers">Appetizers</button>
+                <button class="filter-btn" data-filter="mains">Main Course</button>
+                <button class="filter-btn" data-filter="desserts">Desserts</button>
+                <button class="filter-btn" data-filter="beverages">Beverages</button>
+            </div>
+
+            <div class="menu-grid" id="menu-grid">
+                <!-- Appetizers -->
+                <div class="menu-item" data-category="appetizers">
+                    <div class="menu-item-header">
+                        <h3>Bruschetta al Pomodoro</h3>
+                        <span class="price">$12</span>
+                    </div>
+                    <p class="description">Fresh tomatoes, basil, garlic on toasted artisan bread</p>
+                    <span class="tag">Vegetarian</span>
+                </div>
+
+                <div class="menu-item" data-category="appetizers">
+                    <div class="menu-item-header">
+                        <h3>Calamari Fritti</h3>
+                        <span class="price">$16</span>
+                    </div>
+                    <p class="description">Crispy fried calamari with marinara sauce</p>
+                </div>
+
+                <div class="menu-item" data-category="appetizers">
+                    <div class="menu-item-header">
+                        <h3>Caprese Salad</h3>
+                        <span class="price">$14</span>
+                    </div>
+                    <p class="description">Fresh mozzarella, tomatoes, basil, balsamic glaze</p>
+                    <span class="tag">Vegetarian</span>
+                </div>
+
+                <!-- Main Course -->
+                <div class="menu-item" data-category="mains">
+                    <div class="menu-item-header">
+                        <h3>Grilled Salmon</h3>
+                        <span class="price">$32</span>
+                    </div>
+                    <p class="description">Atlantic salmon with seasonal vegetables and lemon butter</p>
+                    <span class="tag">Chef's Special</span>
+                </div>
+
+                <div class="menu-item" data-category="mains">
+                    <div class="menu-item-header">
+                        <h3>Ribeye Steak</h3>
+                        <span class="price">$42</span>
+                    </div>
+                    <p class="description">12oz prime ribeye with truffle mashed potatoes</p>
+                    <span class="tag">Chef's Special</span>
+                </div>
+
+                <div class="menu-item" data-category="mains">
+                    <div class="menu-item-header">
+                        <h3>Pasta Carbonara</h3>
+                        <span class="price">$24</span>
+                    </div>
+                    <p class="description">Fresh pasta with pancetta, egg, parmesan, black pepper</p>
+                </div>
+
+                <div class="menu-item" data-category="mains">
+                    <div class="menu-item-header">
+                        <h3>Mushroom Risotto</h3>
+                        <span class="price">$26</span>
+                    </div>
+                    <p class="description">Creamy arborio rice with wild mushrooms and truffle oil</p>
+                    <span class="tag">Vegetarian</span>
+                </div>
+
+                <!-- Desserts -->
+                <div class="menu-item" data-category="desserts">
+                    <div class="menu-item-header">
+                        <h3>Tiramisu</h3>
+                        <span class="price">$10</span>
+                    </div>
+                    <p class="description">Classic Italian dessert with espresso and mascarpone</p>
+                </div>
+
+                <div class="menu-item" data-category="desserts">
+                    <div class="menu-item-header">
+                        <h3>Chocolate Lava Cake</h3>
+                        <span class="price">$12</span>
+                    </div>
+                    <p class="description">Warm chocolate cake with vanilla ice cream</p>
+                </div>
+
+                <div class="menu-item" data-category="desserts">
+                    <div class="menu-item-header">
+                        <h3>Panna Cotta</h3>
+                        <span class="price">$9</span>
+                    </div>
+                    <p class="description">Creamy vanilla custard with berry compote</p>
+                </div>
+
+                <!-- Beverages -->
+                <div class="menu-item" data-category="beverages">
+                    <div class="menu-item-header">
+                        <h3>House Wine Selection</h3>
+                        <span class="price">$8-15</span>
+                    </div>
+                    <p class="description">Red, white, and rosé options</p>
+                </div>
+
+                <div class="menu-item" data-category="beverages">
+                    <div class="menu-item-header">
+                        <h3>Signature Cocktails</h3>
+                        <span class="price">$12</span>
+                    </div>
+                    <p class="description">Handcrafted cocktails by our mixologist</p>
+                </div>
+
+                <div class="menu-item" data-category="beverages">
+                    <div class="menu-item-header">
+                        <h3>Fresh Juices</h3>
+                        <span class="price">$6</span>
+                    </div>
+                    <p class="description">Orange, apple, cranberry, or mixed berry</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Gallery</h2>
+                <div class="title-divider"></div>
+                <p class="section-subtitle">A glimpse into our world</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item" data-index="0">
+                    <img src="images/table01.jpg" alt="Restaurant Interior">
+                </div>
+                <div class="gallery-item" data-index="1">
+                    <img src="images/food01.jpg" alt="Signature Dish">
+                </div>
+                <div class="gallery-item" data-index="2">
+                    <img src="images/food02.jpg" alt="Wine Collection">
+                </div>
+                <div class="gallery-item" data-index="3">
+                    <img src="images/table02.jpg" alt="Chef's Table">
+                </div>
+                <div class="gallery-item" data-index="4">
+                    <img src="images/table03.jpg" alt="Bar Area">
+                </div>
+                <div class="gallery-item" data-index="5">
+                    <img src="images/table04.jpg" alt="Desserts">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Modal -->
+    <div class="gallery-modal" id="gallery-modal">
+        <span class="modal-close">&times;</span>
+        <div class="modal-content">
+            <div class="modal-image-container">
+                <img src="" alt="Gallery Image" id="modal-image">
+            </div>
+            <button class="modal-nav prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="modal-nav next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <!-- Reservation Section -->
+    <section class="reservation" id="reservation">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Make a Reservation</h2>
+                <div class="title-divider"></div>
+                <p class="section-subtitle">Reserve your table for an unforgettable experience</p>
+            </div>
+
+            <div class="reservation-content">
+                <div class="reservation-info">
+                    <h3>Opening Hours</h3>
+                    <div class="hours-list">
+                        <div class="hours-item">
+                            <span class="day">Monday - Friday</span>
+                            <span class="time">11:00 AM - 10:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="day">Saturday</span>
+                            <span class="time">10:00 AM - 11:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="day">Sunday</span>
+                            <span class="time">10:00 AM - 9:00 PM</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-box">
+                        <h3>Contact Us</h3>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@bellavista.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Gourmet Street, Food City, FC 12345</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reservation-form-container">
+                    <form id="reservation-form" class="reservation-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required>
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                                <span class="error-message"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="guests">Number of Guests *</label>
+                                <select id="guests" name="guests" required>
+                                    <option value="">Select...</option>
+                                    <option value="1">1 Guest</option>
+                                    <option value="2">2 Guests</option>
+                                    <option value="3">3 Guests</option>
+                                    <option value="4">4 Guests</option>
+                                    <option value="5">5 Guests</option>
+                                    <option value="6">6 Guests</option>
+                                    <option value="7+">7+ Guests</option>
+                                </select>
+                                <span class="error-message"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date">Date *</label>
+                                <input type="date" id="date" name="date" required>
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="time">Time *</label>
+                                <select id="time" name="time" required>
+                                    <option value="">Select time...</option>
+                                </select>
+                                <span class="error-message"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="occasion">Special Occasion (Optional)</label>
+                            <select id="occasion" name="occasion">
+                                <option value="">Select...</option>
+                                <option value="birthday">Birthday</option>
+                                <option value="anniversary">Anniversary</option>
+                                <option value="business">Business Dinner</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Special Requests (Optional)</label>
+                            <textarea id="message" name="message" rows="4"
+                                placeholder="Dietary restrictions, seating preferences, etc."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i class="fas fa-calendar-check"></i> Confirm Reservation
+                        </button>
+                    </form>
+
+                    <div id="success-message" class="success-message hidden">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Reservation Confirmed!</h3>
+                        <p>Thank you for choosing Bella Vista. We've sent a confirmation email to <span
+                                id="confirm-email"></span></p>
+                        <button class="btn btn-secondary" id="new-reservation">Make Another Reservation</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="title-divider"></div>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Visit Us</h3>
+                    <p>123 Gourmet Street<br>Food City, FC 12345</p>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-phone"></i>
+                    <h3>Call Us</h3>
+                    <p>+1 (555) 123-4567<br>Mon-Sun: 11AM - 10PM</p>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email Us</h3>
+                    <p>info@bellavista.com<br>reservations@bellavista.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Bella Vista</h3>
+                    <p>Crafting memorable dining experiences since 1995.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#reservation">Reservations</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@bellavista.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Food City, FC 12345</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Bella Vista Restaurant. All rights reserved. | Designed for Portfolio</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
